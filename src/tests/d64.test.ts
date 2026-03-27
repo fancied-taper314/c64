@@ -18,16 +18,16 @@ describe("D64 parse", () => {
     const data = readFileSync(TEST_D64);
     const dir = parse(data);
     assert.ok(dir !== null, "parse should return a directory");
-    assert.equal(dir.diskName, "TEST DISK");
+    assert.equal(dir.diskName, "C64 CLI");
   });
 
-  it("finds HELLO WORLD PRG entry", () => {
+  it("finds C64 CLI PRG entry", () => {
     const data = readFileSync(TEST_D64);
     const dir = parse(data);
     assert.ok(dir !== null);
-    const hello = dir.entries.find((e) => e.filename === "HELLO WORLD");
-    assert.ok(hello !== undefined, "should find HELLO WORLD entry");
-    assert.equal(hello.fileType, "PRG");
+    const entry = dir.entries.find((e) => e.filename === "C64 CLI");
+    assert.ok(entry !== undefined, "should find C64 CLI entry");
+    assert.equal(entry.fileType, "PRG");
   });
 
   it("reports entries as closed", () => {
