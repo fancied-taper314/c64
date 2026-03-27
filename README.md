@@ -1,12 +1,21 @@
 # c64
 
-Command your C64 Ultimate from the terminal.
+A CLI for the [C64 Ultimate](https://ultimate64.com/) -- mount disks, run cartridges, type on the keyboard, and control your C64 from the terminal.
 
 [![npm version](https://img.shields.io/npm/v/@jeffsand/c64)](https://www.npmjs.com/package/@jeffsand/c64)
 [![CI](https://github.com/jeffsand/c64/actions/workflows/ci.yml/badge.svg)](https://github.com/jeffsand/c64/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-![c64 CLI demo](demo.gif)
+```bash
+npm install -g @jeffsand/c64
+```
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="demo.gif">
+  <img src="demo.gif" alt="c64 CLI demo" width="700" style="border-radius: 8px; border: 1px solid #333;">
+</picture>
+
+> Check device status, play a game, type on the C64 -- all from your terminal.
 
 ## Features
 
@@ -231,6 +240,12 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
 ## Disclaimer
 
 This project is not affiliated with, endorsed by, or associated with Gideon's Logic Architectures or any successor to Commodore. "Commodore 64" and "C64" are trademarks of their respective owners. "Ultimate" is a product of Gideon's Logic Architectures.
+
+## Author
+
+[Jeff Sandquist](https://github.com/jeffsand)
+
+Built with help from [Claude](https://claude.ai).
 
 ## License
 
