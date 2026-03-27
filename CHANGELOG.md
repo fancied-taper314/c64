@@ -4,7 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
-## [0.1.0] - Unreleased
+## [0.1.2] - 2026-03-27
+
+### Added
+
+- Background update checker (checks npm once/day, notifies on next run)
+- Homebrew formula (`brew tap jeffsand/tools && brew install c64`)
+- GitHub Actions release workflow (tag push triggers npm publish + GitHub Release)
+- Demo GIF for README
+
+### Fixed
+
+- FTP upload timeout handling for C64 Ultimate devices
+- Version sync between package.json and version.ts
+
+## [0.1.0] - 2026-03-27
 
 ### Added
 

@@ -8,6 +8,9 @@ A CLI for the [Commodore C64 Ultimate](https://www.commodore.net) -- mount disks
 
 ```bash
 npm install -g @jeffsand/c64
+
+# or with Homebrew
+brew tap jeffsand/tools && brew install c64
 ```
 
 <picture>
@@ -38,7 +41,12 @@ npm install -g @jeffsand/c64
 ## Install
 
 ```bash
+# npm
 npm install -g @jeffsand/c64
+
+# Homebrew
+brew tap jeffsand/tools
+brew install c64
 ```
 
 ## Quick Start
